@@ -3,19 +3,22 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<script src="libs/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="./css/top.css" type="text/css">
 <title>Snarpy Profile</title>
-
 <script type="text/javascript">
-
-$(function() {
-  $("p").click(function(){
-    alert("Hello!");
-  });
-});
-
+function homeBtnClick() {
+  document.location.href = "./html/menu.html";
+}
+function passCodeClick() {
+  alert("あなたの指紋は登録済みですよ");
+}
 </script>
 </head>
 <body>
-	<p>snarpy.github.io作成中。。</p>
+	<div id="sp">
+		<img border="0" src="./images/sp_login.png">
+		<div id="homeBtn" onClick="homeBtnClick()"></div>
+		<div id="forgetBtn" onClick="passCodeClick()"></div>
+	</div>
 </body>
 </html>

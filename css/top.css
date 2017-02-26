@@ -1,0 +1,25 @@
+
+#sp{
+	text-align: center;
+	position: relative;	
+}
+
+#homeBtn{
+	width: 55px;
+	height: 55px;
+	margin: auto;
+	position: absolute;
+	bottom: 30px;
+	right: 0px;
+	left: 0px;
+}
+
+#forgetBtn{
+	width: 140px;
+	height: 30px;
+	margin: auto;
+	position: absolute;
+	bottom: 120px;
+	right: 0px;
+	left: -160px;
+}
