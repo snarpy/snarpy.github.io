@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<link rel="stylesheet" href="../css/header.css" type="text/css"></link>
+	<script>
+	function TechBtnClick() {
+	  alert("Techページは工事中…");
+	  contentHide();
+	  $("#content_tech").show();
+	}
+	function MusicBtnClick() {
+		alert("musicページはまだできてないよん");
+		contentHide();
+		$("#content_music").show();
+	}
+	function LifeBtnClick() {
+	  alert("Lifeページも工事中でごわす！");
+	  contentHide();
+	  $("#content_life").show();
+	}
+	function TwitterBtnClick() {
+	  alert("twitterページも工事中でGOWASU！");
+	  contentHide();
+	  $("#content_twitter").show();
+	}
+	function contentHide() {
+	  $("#content_tech").hide();
+	  $("#content_music").hide();
+	  $("#content_life").hide();
+	  $("#content_twitter").hide();
+	}
+	</script>
+</head>
+<body>
+	<div id = "header-fixed">
+			<img border="0" src="../images/sp_header.png"></img>
+			<div id="TechBtn" onClick="TechBtnClick()"></div>
+			<div id="MusicBtn" onClick="MusicBtnClick()"></div>
+			<div id="LifeBtn" onClick="LifeBtnClick()"></div>
+			<div id="TwitterBtn" onClick="TwitterBtnClick()"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#footer-fixed
+{
+	text-align: center;
+    position: fixed;
+    bottom: 0px;
+    position: relative;
+}
+#homeBtn{
+	width: 55px;
+	height: 55px;
+	margin: auto;
+	position: absolute;
+	bottom: 30px;
+	right: 0px;
+	left: 0px;
+}

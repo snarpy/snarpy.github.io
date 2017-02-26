@@ -1,0 +1,47 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#header-fixed
+{
+	text-align: center;
+	position: fixed;
+	top: 0px;
+    position: relative;
+}
+#TechBtn{
+	width: 65px;
+	height: 70px;
+	margin: auto;
+	position: absolute;
+	bottom: 15px;
+	right: 0px;
+	left:  -225px;
+}
+#MusicBtn{
+	width: 65px;
+	height: 70px;
+	margin: auto;
+	position: absolute;
+	bottom: 15px;
+	right: 0px;
+	left:  -75px;
+}
+#LifeBtn{
+	width: 65px;
+	height: 70px;
+	margin: auto;
+	position: absolute;
+	bottom: 15px;
+	right: -75px;
+	left:  0px;
+}
+#TwitterBtn{
+	width: 65px;
+	height: 70px;
+	margin: auto;
+	position: absolute;
+	bottom: 15px;
+	right: -225px;
+	left:  0px;
+}

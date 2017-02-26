@@ -1,0 +1,27 @@
+#header{
+	width: 100%;
+	height: 200px;
+}
+#footer{
+	width: 100%;
+	height: 115px;
+}
+.contents{
+	width: 100%;
+	min-height: 400px;
+}
+#content_tech{
+	background-color: #F8E6E0;
+}
+#content_music{
+	background-color: #F5F6CE;
+	display: none;
+}
+#content_life{
+	background-color: #D8F6CE;
+	display: none;
+}
+#content_twitter{
+	background-color: #E0F8F7;
+	display: none;
+}

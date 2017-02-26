@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<script src="./header.html"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="../libs/jquery-3.1.1.min.js"></script>
+	<title>Snarpy Profile</title>
+	<link rel="stylesheet" href="../css/bass.css" type="text/css">
+	<script type="text/javascript">
+		$(function(){
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+			$("#content_tech").load("tech.html");
+			$("#content_music").load("music.html");
+			$("#content_life").load("life.html");
+			$("#content_twitter").load("twitter.html");
+		})
+	</script>
 </head>
 <body>
+	<div id="header"></div>
+
 	<script>alert("工事中です。ちょっと待って下さいね。2017/02/26～");</script>
-	<p>menu</p>
+
+	<div id="content_tech" class="contents"></div>
+	<div id="content_music" class="contents"></div>
+	<div id="content_life" class="contents"></div>
+	<div id="content_twitter" class="contents"></div>
+	
+	<div id="footer"></div>
 </body>
 </html>
