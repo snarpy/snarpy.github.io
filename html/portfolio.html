@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="のんびりSE生活">
+  <meta name="author" content="snarpy">
+  <title>snarpyのHP</title>
+
+  <script>
+    // SKill Chart
+    var langSkillChart = new Chart(
+      document.getElementById('langSkillChart'),
+      langSkillConfig
+    );
+    // スクロール時に描画するイベント
+    $('#langSkillChart').on('inview', function (event, isInView) {
+      if (isInView) {
+        langSkillChart.destroy();
+        langSkillChart = new Chart(
+          document.getElementById('langSkillChart'),
+          langSkillConfig
+        );
+      } else {
+        // 表示領域から出た時
+        langSkillChart.destroy();
+      }
+    });
+
+    // Framework Chart
+    var fwSkillChart = new Chart(
+      document.getElementById('fwSkillChart'),
+      fwSkillConfig
+    );
+    // スクロール時に描画するイベント
+    $('#fwSkillChart').on('inview', function (event, isInView) {
+      if (isInView) {
+        fwSkillChart.destroy();
+        fwSkillChart = new Chart(
+          document.getElementById('fwSkillChart'),
+          fwSkillConfig
+        );
+      } else {
+        // 表示領域から出た時
+        fwSkillChart.destroy();
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <main class="container">
+    <div class="text-center" style="position: relative;">
+      <img src="./images/bg_img1.jpg" class="w-100">
+    </div>
+    <div class="text-center">
+      <h6 class="m-3">～ スキルとポートフォリオまとめ ～</h6>
+    </div>
+
+    <div id="skill">
+      <div class="page-header border-top pt-3 flipInXTrigger">
+        <h2 Class="display-6 fst-italic">Skill</h2>
+      </div>
+      <p>
+        エンジニアとしての経験を忘れないようにポートフォリオにまとめました. <br>
+        複数の業務を兼任で担当していたので、経験年数の数え方は結構アバウトです.<br>
+        <a href="https://www.ipa.go.jp/jinzai/itss/itss7.html">IPAのITスキル標準</a>を参考にしてレベル分けしてます.
+      </p>
+
+      <!-- Lang Skill -->
+      <div class="page-header border-top pt-3 flipInXTrigger">
+        <h4 Class="fst-italic">Programming Skill</h4>
+      </div>
+      <div class="p-2 small">
+        <p>
+          SIer企業だったので使うプログラミング言語が数か月単位で変わってました. 広く浅く. <br>
+          フロント/バックエンドの境なく開発. モダンな言語は業務では携われる機会がなく残念. (´・ω・｀) <br>
+          その他 : PowerShell / Classic ASP / VBS / sh,batch / 学生時代はC, C++, HDL, TeX など.
+        </p>
+      </div>
+      <div class="row p-2 mb-4 position-relative">
+        <div class="col-md-8" style="position: relative; height: 340px;">
+          <canvas id="langSkillChart"></canvas>
+        </div>
+        <div class="col-md-4 mb-5 d-flex align-items-end">
+          <div class="p-2 text-secondary rounded shadow bg-white">
+            <p class="m-1 small">Lv1: 最低限必要な基礎知識を有する.</p>
+            <p class="m-1 small">Lv2: 上位者の指導の下に作業を担当できる.</p>
+            <p class="m-1 small">Lv3: 要求された作業を全て独力で遂行できる.</p>
+            <p class="m-1 small">Lv4: コードレビューなどで他者をリードできる.</p>
+            <p class="m-1 small">Lv5: 社内のハイエンドプレーヤ!</p>
+            <p class="m-1 small">Lv6: 国内のハイエンドプレーヤ!!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Framework Skill -->
+      <div class="page-header border-top pt-3 flipInXTrigger">
+        <h4 Class="fst-italic">Framework</h4>
+      </div>
+      <div class="row p-2 mb-4 position-relative">
+        <div class="col-md-8" style="position: relative; height: 300px;">
+          <canvas id="fwSkillChart"></canvas>
+        </div>
+        <div class="col-md-4 mb-5 d-flex align-items-end">
+          <div class="p-2 text-secondary rounded shadow bg-white">
+            <p class="m-1 small">Lv1: 最低限必要な基礎知識を有する.</p>
+            <p class="m-1 small">Lv2: 上位者の指導の下に作業を担当できる.</p>
+            <p class="m-1 small">Lv3: 要求された作業を全て独力で遂行できる.</p>
+            <p class="m-1 small">Lv4: コードレビューなどで他者をリードできる.</p>
+            <p class="m-1 small">Lv5: 社内のハイエンドプレーヤ!</p>
+            <p class="m-1 small">Lv6: 国内のハイエンドプレーヤ!!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool Skill -->
+      <div class="page-header border-top pt-3 flipInXTrigger">
+        <h4 Class="fst-italic">Tools, DevOps, etc.</h4>
+      </div>
+      <dl class="row">
+        <dt class="col-sm-4">Middleware</dt>
+        <dd class="col-sm-8">Apache, IIS / Oracle, SQL Server, PostgreSQL</dd>
+
+        <dt class="col-sm-4">Tools</dt>
+        <dd class="col-sm-8">Subversion, Github, Redmine, Microsoft Project, SVF, ActiveReports</dd>
+
+        <dt class="col-sm-4">OS</dt>
+        <dd class="col-sm-8">Windows Server, Ubuntu, Redhat, CentOS</dd>
+      </dl>
+
+      <!-- Work -->
+      <div class="page-header border-top pt-3 flipInXTrigger">
+        <h4 Class="fst-italic">Work</h4>
+      </div>
+      <div class="p-2 small">
+        <p>ほとんどウォーターフォール開発, 稀にアジャイル(風) という感じでした. 経験してきた作業は下記.</p>
+      </div>
+      <dl class="row">
+        <dt class="col-sm-4">要件定義</dt>
+        <dd class="col-sm-8">若干経験あるような無いような. 修行中.</dd>
+
+        <dt class="col-sm-4">基本設計, 詳細設計</dt>
+        <dd class="col-sm-8">画面設計, 機能設計, DB設計, IF設計, etc.</dd>
+
+        <dt class="col-sm-4">コーディング</dt>
+        <dd class="col-sm-8">実装, コードレビュー, コーディング規約検討. </dd>
+
+        <dt class="col-sm-4">テスト</dt>
+        <dd class="col-sm-8">単体~結合~総合~現地テスト, 品質管理.</dd>
+
+        <dt class="col-sm-4">導入</dt>
+        <dd class="col-sm-8">本番環境へのリリース作業.</dd>
+
+        <dt class="col-sm-4">保守</dt>
+        <dd class="col-sm-8">問合せ対応, 障害対応, メンテナンス, etc.</dd>
+
+        <dt class="col-sm-4">サーバ構築・移行</dt>
+        <dd class="col-sm-8">サーバ環境の構築や、リプレースに伴うシステム移行など.</dd>
+
+        <dt class="col-sm-4">プロジェクト管理</dt>
+        <dd class="col-sm-8">プロジェクトリーダーとして進捗管理, 課題管理, 顧客窓口, 見積 なども担当. </dd>
+
+        <dt class="col-sm-4">システム</dt>
+        <dd class="col-sm-8">在庫管理, 生産管理, 販売管理, 物流, 会計, 人事給与, 施設予約, 地図アプリ, etc. </dd>
+      </dl>
+    </div>
+
+    <div id="products">
+      <div class="page-header border-top pt-3 flipInXTrigger">
+        <h2 Class="display-6 fst-italic">Products</h2>
+      </div>
+      <p>
+        趣味で作成した成果物などを書きたい. (願望)
+      </p>
+
+      <div class="row p-2 mb-4 justify-content-center">
+        <div class="row g-0 border rounded shadow overflow-hidden flex-md-row shadow-sm position-relative">
+          <div class="col-md-8 p-4 d-flex flex-column position-static">
+            <h5 class="mb-0"><i class="bi bi-globe"></i> ホームページ</h5>
+            <p class="card-text mb-auto mt-2">
+              このサイトのことです. <br>
+              製造業の社内SEに転職するにあたり今までの職務経歴を纏めるのと、外部のエンジニアと交流しやすくなるようにと思い立って作成. <br>
+            </p>
+            <button type="button" class="btn btn-primary btn-sm m-2" data-bs-toggle="modal"
+              data-bs-target="#product1Modal">
+              詳細はこちら
+            </button>
+          </div>
+
+          <div class="col-md-4 d-flex align-items-center p-1">
+            <div id="product1Carousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#product1Carousel" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#product1Carousel" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./images/product1_1.jpg" class="d-block w-100 border" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="./images/product1_2.jpg" class="d-block w-100 border" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#product1Carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#product1Carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="product1Modal" tabindex="-1" aria-labelledby="product1ModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="product1ModalLabel"><i class="bi bi-globe"></i> ホームページ</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>テンプレートなどは使用しておらずBootstrapのsampleを参考にして独自実装しました. <br>
+                    シングルページにしつつ、HTMLファイルを分割したいという我儘のせいで若干特殊なソース構成になってます.<br>
+                    デザインがちょっとイケてないのはご愛敬... </p>
+                  <dl class="row">
+                    <dt class="col-sm-3">環境</dt>
+                    <dd class="col-sm-9">GitHub Pages</dd>
+
+                    <dt class="col-sm-3">言語</dt>
+                    <dd class="col-sm-9">HTML, CSS, JavaScript, オンリー</dd>
+
+                    <dt class="col-sm-3">ライブラリ</dt>
+                    <dd class="col-sm-9">jQuery, bootstrap, chart.js, animate.css, jquery.inview</dd>
+                  </dl>
+                </div>
+                <div class="modal-footer">
+                  <a class="btn btn-primary" href="https://github.com/snarpy/snarpy.github.io" role="button"><i
+                      class="bi bi-github"></i> Githubへ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/animation.js"></script>
+
+</body>
+
+</html>
