@@ -12,7 +12,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW3WD8TV7Q"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-YW3WD8TV7Q');
@@ -56,6 +56,25 @@
         fwSkillChart.destroy();
       }
     });
+
+    // GCP Chart
+    var gcpSkillChart = new Chart(
+      document.getElementById('gcpSkillChart'),
+      gcpSkillConfig
+    );
+    // スクロール時に描画するイベント
+    $('#gcpSkillChart').on('inview', function (event, isInView) {
+      if (isInView) {
+        gcpSkillChart.destroy();
+        gcpSkillChart = new Chart(
+          document.getElementById('gcpSkillChart'),
+          gcpSkillConfig
+        );
+      } else {
+        // 表示領域から出た時
+        gcpSkillChart.destroy();
+      }
+    });
   </script>
 </head>
 
@@ -84,8 +103,10 @@
       </div>
       <div class="p-2 small">
         <p>
-          SIer企業だったので使うプログラミング言語が数か月単位で変わってました. 広く浅く. <br>
+          下請けが多いSIer企業だったので、プログラミング言語は数か月単位で変わってました. 広く浅く. <br>
           フロント/バックエンドの境なく開発. モダンな言語は業務では携われる機会がなく残念. (´・ω・｀) <br>
+          社内SEになってからはクラウド化すべく、Google WorkspaceやGCPを使い始める。<br>
+          ノーコードやRPAにもチャレンジ中。<br>
           その他 : PowerShell / Classic ASP / VBS / sh,batch / 学生時代はC, C++, HDL, TeX など.
         </p>
       </div>
@@ -125,16 +146,36 @@
         </div>
       </div>
 
+      <!-- GCP Skill -->
+      <div class="page-header border-top pt-3 flipInXTrigger">
+        <h4 Class="fst-italic">Google Workspace & GCP</h4>
+      </div>
+      <div class="row p-2 mb-4 position-relative">
+        <div class="col-md-8" style="position: relative; height: 300px;">
+          <canvas id="gcpSkillChart"></canvas>
+        </div>
+        <div class="col-md-4 mb-5 d-flex align-items-end">
+          <div class="p-2 text-secondary rounded shadow bg-white">
+            <p class="m-1 small">Lv1: 最低限必要な基礎知識を有する.</p>
+            <p class="m-1 small">Lv2: 上位者の指導の下に作業を担当できる.</p>
+            <p class="m-1 small">Lv3: 要求された作業を全て独力で遂行できる.</p>
+            <p class="m-1 small">Lv4: コードレビューなどで他者をリードできる.</p>
+            <p class="m-1 small">Lv5: 社内のハイエンドプレーヤ!</p>
+            <p class="m-1 small">Lv6: 国内のハイエンドプレーヤ!!</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Tool Skill -->
       <div class="page-header border-top pt-3 flipInXTrigger">
         <h4 Class="fst-italic">Tools, DevOps, etc.</h4>
       </div>
       <dl class="row">
         <dt class="col-sm-4">Middleware</dt>
-        <dd class="col-sm-8">Apache, IIS / Oracle, SQL Server, PostgreSQL</dd>
+        <dd class="col-sm-8">Apache, IIS / Oracle, SQL Server, PostgreSQL, Access</dd>
 
         <dt class="col-sm-4">Tools</dt>
-        <dd class="col-sm-8">Subversion, Github, Redmine, Microsoft Project, SVF, ActiveReports</dd>
+        <dd class="col-sm-8">Subversion, Github, Redmine, Microsoft Project, SVF, ActiveReports, RPA(BizRobo!)</dd>
 
         <dt class="col-sm-4">OS</dt>
         <dd class="col-sm-8">Windows Server, Ubuntu, Redhat, CentOS</dd>
@@ -149,7 +190,7 @@
       </div>
       <dl class="row">
         <dt class="col-sm-4">要件定義</dt>
-        <dd class="col-sm-8">若干経験あるような無いような. 修行中.</dd>
+        <dd class="col-sm-8">SIer時代は経験が乏しいですが、社内SEになってからはシステム改善提案など.</dd>
 
         <dt class="col-sm-4">基本設計, 詳細設計</dt>
         <dd class="col-sm-8">画面設計, 機能設計, DB設計, IF設計, etc.</dd>
@@ -164,7 +205,7 @@
         <dd class="col-sm-8">本番環境へのリリース作業.</dd>
 
         <dt class="col-sm-4">保守</dt>
-        <dd class="col-sm-8">問合せ対応, 障害対応, メンテナンス, etc.</dd>
+        <dd class="col-sm-8">問合せ対応, 障害対応, メンテナンス, ハードウェア端末管理 etc.</dd>
 
         <dt class="col-sm-4">サーバ構築・移行</dt>
         <dd class="col-sm-8">サーバ環境の構築や、リプレースに伴うシステム移行など.</dd>
@@ -174,6 +215,9 @@
 
         <dt class="col-sm-4">システム</dt>
         <dd class="col-sm-8">在庫管理, 生産管理, 販売管理, 物流, 会計, 人事給与, 施設予約, 地図アプリ, etc. </dd>
+
+        <dt class="col-sm-4">情シス, 社内SE</dt>
+        <dd class="col-sm-8">業務改善提案, システム改修&開発, 社員からの問合せ対応, 機器管理 etc.</dd>
       </dl>
     </div>
 

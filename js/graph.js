@@ -8,6 +8,7 @@ const CHART_COLORS = {
   green: 'rgb(75, 192, 192)',
   lightgreen: 'rgb(166, 192, 192)',
   blue: 'rgb(54, 162, 235)',
+  lightblue: 'rgb(141, 197, 235)',
   purple: 'rgb(153, 102, 255)',
   grey: 'rgb(201, 203, 207)'
 };
@@ -54,8 +55,8 @@ const LANG_SKILL_SET =
     },
     {
       "lang": "VBA",
-      "level": 2,
-      "experience": 0.5
+      "level": 3,
+      "experience": 1
     },
     {
       "lang": "SQL",
@@ -273,6 +274,126 @@ const fwSkillConfig = {
           display: true,
           text: 'Level',
           color: CHART_COLORS.green,
+          font: {
+            family: 'Times',
+            size: 14,
+            style: 'normal',
+            lineHeight: 1.2
+          },
+          padding: { top: 0, left: 0, right: 0, bottom: 0 }
+        }
+      },
+    }
+  },
+};
+
+/*
+ * GCPスキル
+ */
+const GCP_SKILL_SET =
+{
+  "skills": [
+    {
+      "lang": "AppSheet",
+      "level": 2,
+      "experience": 0.3
+    },
+    {
+      "lang": "GAS",
+      "level": 1,
+      "experience": 0.3
+    },
+    {
+      "lang": "Looker Studio",
+      "level": 1,
+      "experience": 0.1
+    },
+    {
+      "lang": "BigQuery",
+      "level": 1,
+      "experience": 0.1
+    },
+  ]
+};
+
+const gcpData = {
+  labels: GCP_SKILL_SET.skills.map(({ lang }) => lang),
+  datasets: [
+    {
+      label: '経験年数',
+      data: GCP_SKILL_SET.skills.map(({ experience }) => experience),
+      borderColor: CHART_COLORS.lightblue,
+      backgroundColor: transparentize(CHART_COLORS.lightblue, 0.5),
+      stack: 'combined',
+      type: 'bar',
+      xAxisID: "y_exp"
+    },
+    {
+      label: 'スキルレベル',
+      data: GCP_SKILL_SET.skills.map(({ level }) => level),
+      borderColor: CHART_COLORS.blue,
+      backgroundColor: transparentize(CHART_COLORS.blue, 0.5),
+      stack: 'combined',
+      xAxisID: "y_lv"
+    }
+  ]
+};
+
+const gcpSkillConfig = {
+  type: 'line',
+  data: gcpData,
+  options: {
+    indexAxis: 'y',
+    elements: {
+      line: {
+        borderWidth: 2,
+      }
+    },
+    maintainAspectRatio: false,
+    plugins: {
+      title: {
+        display: true,
+        text: 'GCP スキルレベルと経験年数 (絶賛修行中...)'
+      }
+    },
+    scales: {
+      y_exp: {
+        type: "linear",
+        position: "top",
+        stacked: true,
+        max: 6,
+        min: 0,
+        ticks: {
+          stepSize: 0.5,
+          color: CHART_COLORS.lightblue
+        },
+        title: {
+          display: true,
+          text: 'Years',
+          color: CHART_COLORS.lightblue,
+          font: {
+            family: 'Times',
+            size: 14,
+            style: 'normal',
+            lineHeight: 1.2
+          },
+          padding: { top: 0, left: 0, right: 0, bottom: 0 }
+        }
+      },
+      y_lv: {
+        type: "linear",
+        position: "bottom",
+        stacked: true,
+        max: 6,
+        min: 0,
+        ticks: {
+          stepSize: 1,
+          color: CHART_COLORS.blue
+        },
+        title: {
+          display: true,
+          text: 'Level',
+          color: CHART_COLORS.blue,
           font: {
             family: 'Times',
             size: 14,
