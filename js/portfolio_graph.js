@@ -31,7 +31,7 @@ const LANG_SKILL_SET =
     {
       "lang": "VB.NET",
       "level": 3,
-      "experience": 1
+      "experience": 2
     },
     {
       "lang": "Java",
@@ -295,23 +295,23 @@ const GCP_SKILL_SET =
   "skills": [
     {
       "lang": "AppSheet",
-      "level": 2,
-      "experience": 0.3
+      "level": 3,
+      "experience": 1
     },
     {
       "lang": "GAS",
-      "level": 1,
-      "experience": 0.3
+      "level": 2,
+      "experience": 1
     },
     {
       "lang": "Looker Studio",
       "level": 1,
-      "experience": 0.1
+      "experience": 0.5
     },
     {
       "lang": "BigQuery",
       "level": 1,
-      "experience": 0.1
+      "experience": 1
     },
   ]
 };
